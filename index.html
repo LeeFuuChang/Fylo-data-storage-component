@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Fylo data storage component</title>
+</head>
+<body>
+<!-- 
+  You’ve used 815 GB of your storage
+
+  185 GB Left
+  
+  0 GB
+  1000 GB -->
+
+  <div class="main" role="main">
+    <div class="main-manage">
+      <div class="main-manage-logo">
+        <img class="main-manage-logo-img" src="images/logo.svg" alt="">
+      </div>
+      <div class="main-manage-buttons">
+        <a class="main-manage-buttons-button" href="#">
+          <img class="main-manage-buttons-button-img" src="images/icon-document.svg" alt="">
+        </a>
+        <a class="main-manage-buttons-button" href="#">
+          <img class="main-manage-buttons-button-img" src="images/icon-folder.svg" alt="">
+        </a>
+        <a class="main-manage-buttons-button" href="#">
+          <img class="main-manage-buttons-button-img" src="images/icon-upload.svg" alt="">
+        </a>
+      </div>
+    </div>
+    <div class="main-display">
+      <div class="main-display-used">
+        <p class="main-display-used-description">You’ve used <span class="main-display-used-description-number">815 GB</span> of your storage</p>
+        <div class="main-display-used-progress">
+          <div class="main-display-used-progress-progressbar"></div>
+          <div class="main-display-used-progress-minmax"><span class="main-display-used-progress-minmax-min">0 GB</span><span class="main-display-used-progress-minmax-max">1000 GB</span></div>
+          <div class="main-display-used-progress-unusebox">
+            <h1 class="main-display-used-progress-unusebox-title">185</h1>
+            <p class="main-display-used-progress-unusebox-description">GB LEFT</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.leefuuchang.in">LeeFuuChang</a>.
+  </footer>
+</body>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    background: #0c122c;
+  }
+
+  .main {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .main .main-manage {
+    border-radius: 10px 100px 10px 10px;
+    margin: 15px;
+    padding: 24px;
+    width: 350px;
+    height: 200px;
+    box-shadow: inset -2px -2px 5px #0d112e, inset 2px 2px 5px #405999;
+    background: #1e2c69;
+  }
+  .main .main-manage .main-manage-logo {
+    margin: 16px;
+  }
+
+  .main .main-manage .main-manage-buttons {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 16px 8px;
+  }
+  .main .main-manage .main-manage-buttons .main-manage-buttons-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition-duration: 0.2s;
+    margin: 8px;
+    width: 48px;
+    height: 48px;
+    box-shadow: inset -2px 0px 5px #bbbbbb, inset 1px 2px 5px #0d112e;
+    background: #ffffff;
+  }
+  .main .main-manage .main-manage-buttons .main-manage-buttons-button:hover {
+    box-shadow: inset 0px -2px 5px #0d112e, inset 2px 0px 5px #aaaaaa;
+    background: #ffffff;
+  }
+  .main .main-manage .main-manage-buttons .main-manage-buttons-button .main-manage-buttons-button-img {
+    position: relative;
+  }
+  .main .main-manage .main-manage-buttons .main-manage-buttons-button:hover .main-manage-buttons-button-img {
+    animation: move 0.1s forwards;
+  }
+  @keyframes move {
+    0% {
+      top: 0;
+    }
+    100% {
+      top: -3px;
+    }
+  }
+
+  .main .main-display {
+    border-radius: 10px;
+    margin: 15px;
+    padding: 24px;
+    width: 540px;
+    height: 150px;
+    box-shadow: inset -2px -2px 5px #0d112e, inset 2px 2px 5px #325191;
+    background: #1e2c69;
+  }
+  .main .main-display .main-display-used .main-display-used {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
+  .main .main-display .main-display-used .main-display-used-description {
+    margin: 16px;
+    width: 100%;
+    height: min-content;
+    font-weight: 500;
+    color: #bbc8fd;
+  }
+  .main .main-display .main-display-used .main-display-used-description .main-display-used-description-number {
+    font-weight: 700;
+    color: #ffffff;
+  }
+  .main .main-display .main-display-used .main-display-used-progress {
+    position: relative;
+    padding: 0 16px;
+  }
+  .main .main-display .main-display-used .main-display-used-progress .main-display-used-progress-progressbar {
+    position: relative;
+    cursor: pointer;
+    transition-duration: 0.2s;
+    border: 2px solid #151e47;
+    border-radius: 10px;
+    overflow: hidden;
+    width: auto;
+    height: 20px;
+    background: #151e47;
+  }
+  .main .main-display .main-display-used .main-display-used-progress .main-display-used-progress-progressbar::before {
+    content: "";
+    position: absolute;
+    transition-duration: 0.2s;
+    border-radius: 10px;
+    top: 0;
+    width: 81.5%;
+    height: 100%;
+    background: linear-gradient(to right, #ffa199, #ea4587);
+    filter: blur(3px);
+  }
+  .main .main-display .main-display-used .main-display-used-progress .main-display-used-progress-progressbar::after {
+    content: "";
+    position: absolute;
+    border-radius: 10px;
+    top: 3px;
+    left: 78.5%;
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 0 1px #ffffff, 0 0 2px #ffffff, 0 0 4px #ffffff;
+    background: #ffffff;
+  }
+  .main .main-display .main-display-used .main-display-used-progress .main-display-used-progress-minmax {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 3px;
+    width: auto;
+    height: min-content;
+    color: #ffffff;
+  }
+  .main .main-display .main-display-used .main-display-used-progress .main-display-used-progress-unusebox {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+    border-radius: 10px;
+    top: -110px;
+    right: 0;
+    width: 180px;
+    height: 70px;
+    background: #ffffff;
+    transition-duration: 0.5s;
+    opacity: 0;
+  }
+  .main .main-display .main-display-used .main-display-used-progress:hover .main-display-used-progress-unusebox {
+    opacity: 1;
+  }
+  .main .main-display .main-display-used .main-display-used-progress .main-display-used-progress-unusebox::before {
+    content: "";
+    position: absolute;
+    border-top: 22px solid transparent;
+    border-bottom: 22px solid transparent;
+    border-right: 22px solid #ffffff;
+    bottom: -30%;
+    right: 0;
+    width: 0;
+    height: 0;
+  }
+  .main .main-display .main-display-used .main-display-used-progress .main-display-used-progress-unusebox .main-display-used-progress-unusebox-title {
+    font-size: 32px;
+  }
+  .main .main-display .main-display-used .main-display-used-progress .main-display-used-progress-unusebox .main-display-used-progress-unusebox-description {
+    margin: 8px;
+    font-size: 8px;
+    font-weight: 700;
+    color: #909196;
+  }
+
+
+
+  .attribution { 
+    position: relative;
+    top: 75px;
+    font-size: 11px; 
+    text-align: center; 
+    color: #bbc8fd;
+  }
+  .attribution a { 
+    font-size: 11px; 
+    color: #ffffff; 
+  }
+
+
+
+  @media (max-width: 60rem) {
+    .main {
+      flex-direction: column;
+    }
+    .main .main-display {
+      width: 350px;
+    }
+    .main .main-display .main-display-used .main-display-used-progress .main-display-used-progress-unusebox {
+      right: 15%;
+      top: 30px;
+    }
+    .main .main-display .main-display-used .main-display-used-progress .main-display-used-progress-unusebox::before {
+      opacity: 0;
+    }
+  }
+</style>
+</html>
