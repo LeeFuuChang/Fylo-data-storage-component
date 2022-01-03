@@ -32,6 +32,7 @@ This is a solution to the [Fylo data storage component challenge on Frontend Men
 - CSS media queries
 - Flexbox
 - Neumorphism Shadowing
+- Desktop first workflow
 
 ## Author
 - Website - [LeeFuuChang](https://www.leefuuchang.in)
